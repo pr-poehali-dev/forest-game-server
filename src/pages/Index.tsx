@@ -165,9 +165,8 @@ export default function Index() {
 
       {/* HERO */}
       <section id="home" ref={setRef("home")} className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${HERO_IMAGE})` }} />
-        <div className="absolute inset-0 bg-gradient-to-b from-void/60 via-void/40 to-void" />
-        <div className="absolute inset-0 bg-gradient-to-r from-void/60 via-transparent to-void/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a1520] via-void to-void" />
+        <div className="absolute inset-0 bg-gradient-to-r from-void/80 via-transparent to-void/80" />
 
         <div className="relative z-20 px-4 max-w-4xl mx-auto">
           <p className="font-title text-xs tracking-[0.5em] text-ice/70 mb-4 uppercase">— Minecraft сервер —</p>
