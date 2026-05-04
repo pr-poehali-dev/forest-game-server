@@ -21,40 +21,40 @@ const NAV_ITEMS = [
 ];
 
 const RANKS = [
-  { name: "Выживший", color: "#a8e6f0", players: 1842 },
-  { name: "Охотник", color: "#4dd9f0", players: 634 },
-  { name: "Рейдер", color: "#ff9944", players: 218 },
-  { name: "Призрак", color: "#cc44ff", players: 87 },
-  { name: "Легенда", color: "#ff4422", players: 23 },
+  { name: "Новобранец", color: "#a8e6f0", players: 1842 },
+  { name: "Выживший", color: "#4dd9f0", players: 634 },
+  { name: "Охотник", color: "#ff9944", players: 218 },
+  { name: "Рейдер", color: "#cc44ff", players: 87 },
+  { name: "Волк", color: "#ff4422", players: 23 },
 ];
 
 const SHOP_ITEMS = [
-  { name: "Набор Выжившего", desc: "Базовое снаряжение для старта", price: "149₽", tag: "СТАРТ", color: "#4dd9f0" },
-  { name: "Криоброня", desc: "Защита от мороза и врагов", price: "399₽", tag: "ТОПЧИК", color: "#ff9944" },
-  { name: "Комплект Призрака", desc: "Невидимость и скорость", price: "699₽", tag: "РЕДКИЙ", color: "#cc44ff" },
-  { name: "Легендарный набор", desc: "Всё включено. Власть над сервером", price: "1499₽", tag: "ХИТ", color: "#ff4422" },
+  { name: "Стартовый набор", desc: "Базовое снаряжение: аптечки, еда, нож", price: "149₽", tag: "СТАРТ", color: "#4dd9f0" },
+  { name: "Боец", desc: "Армейский комплект: броник, рюкзак, фляга", price: "399₽", tag: "ПОПУЛЯРНО", color: "#ff9944" },
+  { name: "Рейдер", desc: "Штурмовое снаряжение + голосовой приоритет", price: "699₽", tag: "ТОПЧИК", color: "#cc44ff" },
+  { name: "Волк", desc: "Максимальный привилегии. Власть над Намальском", price: "1499₽", tag: "ХИТ", color: "#ff4422" },
 ];
 
 const NEWS = [
-  { date: "01 МАЯ 2026", title: "Обновление 2.4 — Ледяная буря", text: "Новый ивент с метелью каждые 6 часов. Выживите — получите уникальный дроп.", tag: "ОБНОВЛЕНИЕ" },
-  { date: "28 АПР 2026", title: "Турнир выживших", text: "500 игроков, один победитель. Приз — легендарный сет и 5000 монет.", tag: "ИВЕНТ" },
-  { date: "20 АПР 2026", title: "Трейдинг теперь без комиссии", text: "Две недели торгуйте без платы. Рынок открыт для всех рангов.", tag: "АКЦИЯ" },
+  { date: "01 МАЯ 2026", title: "Обновление карты Namalsk", text: "Добавлены новые подземные бункеры и радиационные зоны. Зачисти их — найдёшь военный лут.", tag: "ОБНОВЛЕНИЕ" },
+  { date: "28 АПР 2026", title: "Ивент: Последний выживший", text: "Финальная зона сужается. Кто останется в живых — получит эксклюзивный скин и привилегии.", tag: "ИВЕНТ" },
+  { date: "20 АПР 2026", title: "Трейдер открыл новый ассортимент", text: "На торговой базе появилось оружие калибра .308 и тактические прицелы. Запасы ограничены.", tag: "АКЦИЯ" },
 ];
 
 const GUIDES = [
-  { icon: "Sword", title: "Первые 24 часа", desc: "Как выжить и не замёрзнуть", time: "5 мин" },
-  { icon: "Home", title: "Строительство базы", desc: "Защита от рейдов и холода", time: "8 мин" },
-  { icon: "ArrowUpDown", title: "Трейдинг с нуля", desc: "Зарабатывай на торговле", time: "6 мин" },
-  { icon: "Trophy", title: "Как попасть в топ", desc: "Стратегия подъёма в рейтинге", time: "10 мин" },
-  { icon: "Zap", title: "ПвП тактики", desc: "Побеждай любого врага", time: "7 мин" },
-  { icon: "Package", title: "Крафт и ресурсы", desc: "Лучшие рецепты зимы", time: "4 мин" },
+  { icon: "Zap", title: "Первые 30 минут", desc: "Спаун на Намальске — куда бежать", time: "5 мин" },
+  { icon: "Home", title: "Строительство базы", desc: "Кодовые замки, стены, тайники", time: "8 мин" },
+  { icon: "ArrowUpDown", title: "Трейдинг с нуля", desc: "Как работает торговец на сервере", time: "6 мин" },
+  { icon: "Trophy", title: "Лучший лут на карте", desc: "Топ-5 мест для фарма снаряжения", time: "7 мин" },
+  { icon: "Crosshair", title: "ПвП тактики", desc: "Позиционирование и засады", time: "10 мин" },
+  { icon: "Package", title: "Крафт и медицина", desc: "Лечение, шины, кровь — всё о выживании", time: "4 мин" },
 ];
 
 const TRADE_ITEMS = [
-  { from: "Алмазный меч", fromAmt: "1 шт", to: "2000 монет", seller: "Ghost_Raven", online: true },
-  { from: "Кристаллы льда", fromAmt: "64 шт", to: "Криобронь", seller: "Frost_Walker", online: false },
-  { from: "Легендарный топор", fromAmt: "1 шт", to: "5500 монет", seller: "IceKing99", online: true },
-  { from: "Зелье скорости IV", fromAmt: "16 шт", to: "Рубины x50", seller: "SilentBlade", online: true },
+  { from: "AKM + магазины", fromAmt: "1 шт + 4 маг", to: "Рейдовый рюкзак", seller: "Ghost_Raven", online: true },
+  { from: "Тушёнка x10", fromAmt: "10 банок", to: "Армейская аптечка", seller: "Frost_Walker", online: false },
+  { from: "M4A1 (чистая)", fromAmt: "1 шт", to: "5500 монет", seller: "IceWolf99", online: true },
+  { from: "Армейская броня", fromAmt: "1 шт", to: "Снайперский прицел x8", seller: "SilentHunter", online: true },
 ];
 
 const SnowParticles = () => {
@@ -169,11 +169,11 @@ export default function Index() {
         <div className="absolute inset-0 bg-gradient-to-r from-void/80 via-transparent to-void/80" />
 
         <div className="relative z-20 px-4 max-w-4xl mx-auto">
-          <p className="font-title text-xs tracking-[0.5em] text-ice/70 mb-4 uppercase">— Minecraft сервер —</p>
+          <p className="font-title text-xs tracking-[0.5em] text-ice/70 mb-4 uppercase">— DayZ Standalone · Namalsk —</p>
           <h1 className="font-glitch text-7xl sm:text-9xl text-ice glow-ice-text animate-flicker mb-2">ЛЕСНЫЕ</h1>
           <p className="font-title text-2xl sm:text-3xl text-frost/80 tracking-widest uppercase mb-8">Выжить любой ценой</p>
           <p className="font-body text-sm text-frost/50 italic mb-10 max-w-xl mx-auto leading-relaxed">
-            Зима пришла навсегда. Цивилизация рухнула. В замёрзших лесах выживают только сильнейшие.
+            Намальск. Вечная мерзлота. Радиация. Бандиты. Ты один — и только твои решения определят, выживешь ли ты до рассвета.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -211,19 +211,19 @@ export default function Index() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <p className="text-frost/70 leading-relaxed">
-                <span className="text-ice font-title text-lg">ЛЕСНЫЕ</span> — выживательный сервер нового поколения.
-                Вечная зима, ресурсные войны, рейды и торговля. Здесь нет случайных побед.
+                <span className="text-ice font-title text-lg">ЛЕСНЫЕ</span> — русскоязычный DayZ сервер на карте Namalsk 1.29.
+                Суровый климат, военные базы, рейды и живой рынок трейдера. Здесь нет случайных побед.
               </p>
               <p className="text-frost/50 leading-relaxed text-sm">
-                Наш мир живёт по своим законам: альянсы создаются и рушатся, торговые маршруты контролируются
-                кланами, а каждая ночь может стать последней.
+                Намальск — самая жёсткая карта в DayZ. Мороз убивает быстрее бандитов. Радиационные зоны
+                скрывают лучший лут. Каждый рейд может стать последним.
               </p>
               <div className="grid grid-cols-2 gap-4 pt-4">
                 {[
-                  { icon: "Snowflake", label: "Зимний мир", desc: "Уникальные биомы" },
-                  { icon: "Shield", label: "Антигрифер", desc: "Защита базы" },
-                  { icon: "Sword", label: "ПвП зоны", desc: "Честный бой" },
-                  { icon: "BarChart2", label: "Экономика", desc: "Реальный рынок" },
+                  { icon: "Snowflake", label: "Карта Namalsk", desc: "Версия 1.29" },
+                  { icon: "Shield", label: "Защита базы", desc: "Кодовые замки" },
+                  { icon: "Crosshair", label: "ПвП зоны", desc: "Честный бой" },
+                  { icon: "BarChart2", label: "Трейдер", desc: "Живой рынок" },
                 ].map((f) => (
                   <div key={f.label} className="card-frost p-4 rounded-sm">
                     <Icon name={f.icon as string} size={18} className="text-ice mb-2" />
@@ -235,8 +235,8 @@ export default function Index() {
             </div>
             <div className="card-frost rounded-sm p-6 space-y-4">
               <div className="font-title text-xs tracking-widest text-ice/60 uppercase">Версия сервера</div>
-              <div className="font-title text-3xl text-frost">Minecraft 1.20.4</div>
-              {[["IP адрес", "play.lesnye.ru"], ["Режим", "Survival + ПвП"], ["Карта", "Зимний апокалипсис"], ["Слотов", "500"]].map(([k, v]) => (
+              <div className="font-title text-3xl text-frost">DayZ 1.29</div>
+              {[["IP адрес", "109.248.4.9:2398"], ["Режим", "PvP / Выживание"], ["Карта", "Namalsk"], ["Слотов", "60"]].map(([k, v]) => (
                 <div key={k} className="flex justify-between items-center py-2 border-b border-white/5">
                   <span className="text-xs text-frost/40 uppercase tracking-wider font-title">{k}</span>
                   <span className="text-sm text-ice font-title">{v}</span>
@@ -258,10 +258,10 @@ export default function Index() {
           </div>
           <div className="grid md:grid-cols-4 gap-6">
             {[
-              { n: "01", icon: "Download", title: "Установи Minecraft", desc: "Версия 1.20.4 Java Edition" },
-              { n: "02", icon: "Server", title: "Добавь сервер", desc: "IP: play.lesnye.ru" },
-              { n: "03", icon: "UserPlus", title: "Регистрация", desc: "Введи /reg пароль пароль" },
-              { n: "04", icon: "Zap", title: "В бой!", desc: "Выживай и становись легендой" },
+              { n: "01", icon: "Download", title: "Установи DayZ", desc: "Версия 1.29 через Steam" },
+              { n: "02", icon: "Package", title: "Установи моды", desc: "Подписаться в Steam Workshop" },
+              { n: "03", icon: "Server", title: "Найди сервер", desc: "IP: 109.248.4.9:2398" },
+              { n: "04", icon: "Zap", title: "В бой!", desc: "Намальск ждёт. Выживи." },
             ].map((step) => (
               <div key={step.n} className="card-frost rounded-sm p-6 flex flex-col">
                 <div className="font-glitch text-4xl text-ice/20 mb-3">{step.n}</div>
@@ -338,13 +338,13 @@ export default function Index() {
           </div>
           <div className="space-y-3 mb-10">
             {[
-              { pos: 1, name: "IceKing99", rank: "Легенда", kills: 12400, score: 98540, rankColor: "#ff4422" },
-              { pos: 2, name: "Ghost_Raven", rank: "Призрак", kills: 9800, score: 87320, rankColor: "#cc44ff" },
-              { pos: 3, name: "Frost_Walker", rank: "Призрак", kills: 8100, score: 74890, rankColor: "#cc44ff" },
-              { pos: 4, name: "SilentBlade", rank: "Рейдер", kills: 6300, score: 61200, rankColor: "#ff9944" },
-              { pos: 5, name: "NightWolf_X", rank: "Рейдер", kills: 5900, score: 58700, rankColor: "#ff9944" },
-              { pos: 6, name: "Snowdrift", rank: "Охотник", kills: 4100, score: 41300, rankColor: "#4dd9f0" },
-              { pos: 7, name: "ColdStrike", rank: "Охотник", kills: 3700, score: 37800, rankColor: "#4dd9f0" },
+              { pos: 1, name: "IceWolf99", rank: "Волк", kills: 12400, score: 98540, rankColor: "#ff4422" },
+              { pos: 2, name: "Ghost_Raven", rank: "Рейдер", kills: 9800, score: 87320, rankColor: "#cc44ff" },
+              { pos: 3, name: "Frost_Walker", rank: "Рейдер", kills: 8100, score: 74890, rankColor: "#cc44ff" },
+              { pos: 4, name: "SilentHunter", rank: "Охотник", kills: 6300, score: 61200, rankColor: "#ff9944" },
+              { pos: 5, name: "NightWolf_X", rank: "Охотник", kills: 5900, score: 58700, rankColor: "#ff9944" },
+              { pos: 6, name: "Snowdrift", rank: "Выживший", kills: 4100, score: 41300, rankColor: "#4dd9f0" },
+              { pos: 7, name: "ColdStrike", rank: "Выживший", kills: 3700, score: 37800, rankColor: "#4dd9f0" },
             ].map((p) => (
               <div key={p.pos} className="card-frost rounded-sm p-4 flex items-center gap-4">
                 <div className="font-title text-base w-8 text-center" style={{ color: p.pos === 1 ? "#ffd700" : p.pos === 2 ? "#c0c0c0" : p.pos === 3 ? "#cd7f32" : "#4dd9f0" }}>
@@ -484,9 +484,9 @@ export default function Index() {
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             {[
-              { title: "Турнир выживших", dates: "15–20 МАЯ 2026", prize: "Легендарный сет + 10 000 монет", desc: "500 игроков сражаются за звание лучшего выжившего.", color: "#ff4422", active: true },
-              { title: "Лучшая база месяца", dates: "01–31 МАЯ 2026", prize: "VIP статус на 6 месяцев", desc: "Построй самую впечатляющую крепость. Голосование сообщества.", color: "#cc44ff", active: true },
-              { title: "Охота на боссов", dates: "Каждую субботу", prize: "Уникальные артефакты", desc: "Еженедельный рейд на ледяных боссов. Топ-3 получают награды.", color: "#4dd9f0", active: false },
+              { title: "Последний выживший", dates: "15–20 МАЯ 2026", prize: "Пакет «Волк» + 10 000 монет", desc: "60 игроков на одной карте. Зона сужается. Победит один.", color: "#ff4422", active: true },
+              { title: "Лучшая база месяца", dates: "01–31 МАЯ 2026", prize: "VIP статус на 6 месяцев", desc: "Самая укреплённая и креативная база по итогам голосования.", color: "#cc44ff", active: true },
+              { title: "Охота на трейдера", dates: "Каждую субботу", prize: "Редкое военное снаряжение", desc: "Найди секретного трейдера на Намальске раньше других — забери весь лут.", color: "#4dd9f0", active: false },
             ].map((c) => (
               <div key={c.title} className="card-frost rounded-sm overflow-hidden">
                 <div className="h-1" style={{ background: c.color }} />
@@ -639,12 +639,12 @@ export default function Index() {
           </div>
           <div className="grid md:grid-cols-2 gap-4">
             {[
-              { n: "§1", title: "Уважение", text: "Запрещены оскорбления, дискриминация и токсичность в чате." },
-              { n: "§2", title: "Читы и хаки", text: "Использование читов ведёт к перманентному бану без предупреждения." },
-              { n: "§3", title: "Гриферство", text: "Разрушение чужих построек вне ПвП-зон запрещено." },
-              { n: "§4", title: "Честная игра", text: "Эксплойты и баги сообщаются в поддержку, не используются." },
-              { n: "§5", title: "Реклама", text: "Реклама других серверов в чате — немедленный бан." },
-              { n: "§6", title: "Аккаунты", text: "Один игрок — один аккаунт. Мультиаккаунты блокируются." },
+              { n: "§1", title: "Уважение", text: "Запрещены оскорбления, дискриминация и токсичность в голосовом чате и Discord." },
+              { n: "§2", title: "Читы и хаки", text: "ESP, aimbot, speed hack — перманентный бан без предупреждения." },
+              { n: "§3", title: "Глитчи", text: "Использование багов игры, стройка в камнях, дюп предметов — бан." },
+              { n: "§4", title: "Баги — в поддержку", text: "Нашёл эксплойт — сообщи. Использовал — получил бан." },
+              { n: "§5", title: "Реклама", text: "Реклама других серверов в любом чате — немедленный бан." },
+              { n: "§6", title: "Аккаунты", text: "Один Steam аккаунт — один игрок. Мультиаккаунты блокируются." },
             ].map((rule) => (
               <div key={rule.n} className="card-frost rounded-sm p-5 flex gap-4">
                 <div className="font-glitch text-2xl text-ice/30 flex-shrink-0 w-8">{rule.n}</div>
