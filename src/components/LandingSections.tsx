@@ -55,7 +55,9 @@ export default function LandingSections({ scrollTo, setRef, promoCode, setPromoC
         <div className="absolute inset-0 bg-gradient-to-b from-[#061008] via-void to-void" />
         <div className="absolute inset-0 bg-gradient-to-r from-void/80 via-transparent to-void/80" />
         <div className="relative z-20 px-4 max-w-4xl mx-auto">
-          <p className="font-title text-xs tracking-[0.5em] text-ice/70 mb-4 uppercase">— DayZ Standalone · Namalsk —</p>
+          <p className="font-title text-xs tracking-[0.5em] text-ice/70 mb-4 uppercase">— DayZ Standalone · CHERNO—
+
+</p>
           <h1 className="font-glitch text-7xl sm:text-9xl text-ice glow-ice-text animate-flicker mb-2">ЛЕСНЫЕ</h1>
           <p className="font-title text-2xl sm:text-3xl text-frost/80 tracking-widest uppercase mb-8">Выжить любой ценой</p>
           <p className="font-body text-sm text-frost/50 italic mb-10 max-w-xl mx-auto leading-relaxed">
