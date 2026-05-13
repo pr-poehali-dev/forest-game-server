@@ -60,9 +60,7 @@ export default function LandingSections({ scrollTo, setRef, promoCode, setPromoC
 </p>
           <h1 className="font-glitch text-7xl sm:text-9xl text-ice glow-ice-text animate-flicker mb-2">ЛЕСНЫЕ</h1>
           <p className="font-title text-2xl sm:text-3xl text-frost/80 tracking-widest uppercase mb-8">Выжить любой ценой</p>
-          <p className="font-body text-sm text-frost/50 italic mb-10 max-w-xl mx-auto leading-relaxed">
-            Намальск. Вечная мерзлота. Радиация. Бандиты. Ты один — и только твои решения определят, выживешь ли ты до рассвета.
-          </p>
+          <p className="font-body text-sm text-frost/50 italic mb-10 max-w-xl mx-auto leading-relaxed">Cherno. Радиация. Бандиты. Ты один — и только твои решения определят, выживешь ли ты до рассвета.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button onClick={() => scrollTo("start")} className="btn-ice px-8 py-4 text-sm rounded-sm glow-ice">Начать играть</button>
             <button onClick={() => scrollTo("about")} className="btn-outline-ice px-8 py-4 text-sm rounded-sm">О сервере</button>
