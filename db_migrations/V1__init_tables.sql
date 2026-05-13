@@ -1,0 +1,102 @@
+CREATE TABLE IF NOT EXISTS users (
+  id SERIAL PRIMARY KEY,
+  username VARCHAR(32) UNIQUE NOT NULL,
+  email VARCHAR(255) UNIQUE NOT NULL,
+  password_hash VARCHAR(255) NOT NULL,
+  avatar_url TEXT DEFAULT NULL,
+  bio TEXT DEFAULT '',
+  rank VARCHAR(32) DEFAULT 'Новобранец',
+  score INTEGER DEFAULT 0,
+  kills INTEGER DEFAULT 0,
+  hours_played INTEGER DEFAULT 0,
+  referral_code VARCHAR(16) UNIQUE NOT NULL,
+  referred_by INTEGER DEFAULT NULL,
+  discord_linked BOOLEAN DEFAULT FALSE,
+  vk_linked BOOLEAN DEFAULT FALSE,
+  telegram_linked BOOLEAN DEFAULT FALSE,
+  youtube_linked BOOLEAN DEFAULT FALSE,
+  rutube_linked BOOLEAN DEFAULT FALSE,
+  email_verified BOOLEAN DEFAULT FALSE,
+  infected_killed INTEGER DEFAULT 0,
+  bots_killed INTEGER DEFAULT 0,
+  flags_placed INTEGER DEFAULT 0,
+  trader_purchases INTEGER DEFAULT 0,
+  black_trader_purchases INTEGER DEFAULT 0,
+  fish_caught INTEGER DEFAULT 0,
+  friends_invited INTEGER DEFAULT 0,
+  session_token VARCHAR(64) UNIQUE DEFAULT NULL,
+  created_at TIMESTAMP DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS achievements (
+  id SERIAL PRIMARY KEY,
+  code VARCHAR(64) UNIQUE NOT NULL,
+  name VARCHAR(128) NOT NULL,
+  description TEXT NOT NULL,
+  icon VARCHAR(32) NOT NULL,
+  category VARCHAR(32) NOT NULL,
+  color VARCHAR(16) DEFAULT '#6ee87a'
+);
+
+CREATE TABLE IF NOT EXISTS user_achievements (
+  id SERIAL PRIMARY KEY,
+  user_id INTEGER REFERENCES users(id) NOT NULL,
+  achievement_id INTEGER REFERENCES achievements(id) NOT NULL,
+  unlocked_at TIMESTAMP DEFAULT NOW(),
+  UNIQUE(user_id, achievement_id)
+);
+
+CREATE TABLE IF NOT EXISTS tickets (
+  id SERIAL PRIMARY KEY,
+  user_id INTEGER REFERENCES users(id) NOT NULL,
+  category VARCHAR(64) NOT NULL,
+  message TEXT NOT NULL,
+  status VARCHAR(16) DEFAULT 'open',
+  created_at TIMESTAMP DEFAULT NOW()
+);
+
+INSERT INTO achievements (code, name, description, icon, category, color) VALUES
+('register', 'Первый шаг в ад', 'Зарегистрировался на сервере', 'UserPlus', 'registration', '#6ee87a'),
+('register_2', 'Добро пожаловать в кошмар', 'Выживший зарегистрирован', 'Shield', 'registration', '#6ee87a'),
+('discord_link', 'Связь с внешним миром', 'Привязал Discord аккаунт', 'MessageSquare', 'social', '#5865f2'),
+('vk_link', 'ВКонтакте с апокалипсисом', 'Привязал ВКонтакте', 'Globe', 'social', '#4680c2'),
+('telegram_link', 'Телеграм — последний канал', 'Привязал Telegram', 'Send', 'social', '#27a7e7'),
+('youtube_link', 'На YouTube не загрузишь', 'Привязал YouTube канал', 'Play', 'social', '#ff0000'),
+('rutube_link', 'Rutube: запасный вариант', 'Привязал Rutube канал', 'Video', 'social', '#ff6600'),
+('email_link', 'Почта не дойдёт, но связь есть', 'Подтвердил электронную почту', 'Mail', 'social', '#6ee87a'),
+('invite_1', 'Вербовал в апокалипсис', 'Пригласил 1 друга', 'UserPlus', 'invite', '#ffd700'),
+('invite_5', 'Банда выживших', 'Пригласил 5 друзей', 'Users', 'invite', '#ffd700'),
+('invite_10', 'Армия спасения', 'Пригласил 10 друзей', 'Star', 'invite', '#ffd700'),
+('hours_5', 'Первые шаги', 'Провёл 5 часов на сервере', 'Clock', 'playtime', '#6ee87a'),
+('hours_10', 'Освоился', 'Провёл 10 часов на сервере', 'Clock', 'playtime', '#6ee87a'),
+('hours_20', 'Ветеран окраины', 'Провёл 20 часов на сервере', 'Clock', 'playtime', '#4dd9f0'),
+('hours_50', 'Не на шутку затянуло', 'Провёл 50 часов на сервере', 'Clock', 'playtime', '#4dd9f0'),
+('hours_100', 'Живу здесь', 'Провёл 100 часов на сервере', 'Clock', 'playtime', '#ff9944'),
+('hours_200', 'Местный старожил', 'Провёл 200 часов на сервере', 'Clock', 'playtime', '#ff9944'),
+('hours_500', 'Легенда Зоны', 'Провёл 500 часов на сервере', 'Flame', 'playtime', '#cc44ff'),
+('hours_1000', 'Бессменный страж', 'Провёл 1000 часов на сервере', 'Crown', 'playtime', '#cc44ff'),
+('hours_1500', 'Хранитель руин', 'Провёл 1500 часов на сервере', 'Crown', 'playtime', '#ff4422'),
+('hours_2000', 'Сталкер тысячелетия', 'Провёл 2000 часов на сервере', 'Crown', 'playtime', '#ff4422'),
+('hours_3000', 'Бессмертный', 'Провёл 3000 часов на сервере', 'Infinity', 'playtime', '#ff4422'),
+('flag_1', 'Застолбил территорию', 'Установил первый флаг', 'Flag', 'base', '#6ee87a'),
+('infected_10', 'Чистка территории', 'Убил 10 заражённых', 'Target', 'infected', '#6ee87a'),
+('infected_30', 'Охотник за заразой', 'Убил 30 заражённых', 'Target', 'infected', '#6ee87a'),
+('infected_50', 'Ликвидатор', 'Убил 50 заражённых', 'Target', 'infected', '#4dd9f0'),
+('infected_100', 'Санитар апокалипсиса', 'Убил 100 заражённых', 'Target', 'infected', '#4dd9f0'),
+('infected_1000', 'Истребитель заражённых', 'Убил 1000 заражённых', 'Skull', 'infected', '#ff9944'),
+('infected_2000', 'Ангел смерти', 'Убил 2000 заражённых', 'Skull', 'infected', '#cc44ff'),
+('infected_3000', 'Молот заразы', 'Убил 3000 заражённых', 'Skull', 'infected', '#cc44ff'),
+('infected_5000', 'Последний приговор', 'Убил 5000 заражённых', 'Skull', 'infected', '#ff4422'),
+('bots_1', 'Первый выстрел', 'Убил первого бота', 'Crosshair', 'bots', '#6ee87a'),
+('bots_30', 'Тренировка прошла успешно', 'Убил 30 ботов', 'Crosshair', 'bots', '#6ee87a'),
+('bots_50', 'Тактика отработана', 'Убил 50 ботов', 'Crosshair', 'bots', '#4dd9f0'),
+('bots_80', 'Мастер засады', 'Убил 80 ботов', 'Crosshair', 'bots', '#ff9944'),
+('bots_150', 'Боторез', 'Убил 150 ботов', 'Zap', 'bots', '#cc44ff'),
+('bots_200', 'Палач машин', 'Убил 200 ботов', 'Zap', 'bots', '#ff4422'),
+('trader_first', 'Первая сделка', 'Совершил первую покупку у трейдера', 'ShoppingCart', 'trade', '#ffd700'),
+('black_trader_first', 'Тёмный рынок', 'Купил товар у чёрного трейдера', 'Package', 'trade', '#cc44ff'),
+('fish_1', 'Первый улов', 'Поймал первую рыбу', 'Fish', 'fishing', '#4dd9f0'),
+('fish_30', 'Рыбак окраины', 'Поймал 30 рыб', 'Fish', 'fishing', '#4dd9f0'),
+('fish_50', 'Хозяин водоёма', 'Поймал 50 рыб', 'Fish', 'fishing', '#6ee87a'),
+('fish_100', 'Король реки', 'Поймал 100 рыб', 'Crown', 'fishing', '#ffd700')
+ON CONFLICT (code) DO NOTHING;

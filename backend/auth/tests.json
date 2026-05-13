@@ -1,0 +1,22 @@
+{
+  "tests": [
+    {
+      "name": "Register new user",
+      "method": "POST",
+      "path": "/register",
+      "body": {"username": "TestWolf", "email": "test@lesnye.ru", "password": "secret123"},
+      "expectedStatus": 200,
+      "expectedBody": {"token": "string"},
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Login user",
+      "method": "POST",
+      "path": "/login",
+      "body": {"login": "TestWolf", "password": "secret123"},
+      "expectedStatus": 200,
+      "expectedBody": {"token": "string"},
+      "bodyMatcher": "partial"
+    }
+  ]
+}
